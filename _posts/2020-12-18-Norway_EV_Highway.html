@@ -20,20 +20,20 @@ share-img: /assets/img/car.jpg
             Yet, globally, there are more than <a href="https://www.carsguide.com.au/car-advice/how-many-cars-are-there-in-the-world-70629">1 billion</a>  cars in use which makes the EV fleet less than half a percent.
             Still, this impressive growth over the past 10 years raises big questions for the future.
             When will electric surpasses combustion vehicles? Which EV model is selling best? Can gas stations switch to charging stations at the same pace?
-            What does it take to accelerate or decelerate this transition? Which countries are ahead in EV deployments? </p>
-            <p>Well, it turns out that there are humongous disparities in the growth of EVs across the globe. Take a look at 2018 car sales. Look at how Norway is way ahead in EV sales share!
+            What does it take to accelerate or decelerate this transition? Which countries are ahead in <a href="https://www.statista.com/chart/17344/electric-vehicle-share/">EV deployments</a>? </p>
+            <p>Well, it turns out that there are humongous disparities in the growth of EVs across the globe. Take a look at 2019 car sales. Look at how Norway is way ahead in EV sales share!
             </p>
             {% comment %} <iframe width="1100" height="600" frameborder="0" scrolling="no" src="//plotly.com/~shasha.jiang/17.embed"></iframe> {% endcomment %}
             <iframe width="1100" height="600" frameborder="0" scrolling="no" src="//plotly.com/~shasha.jiang/40.embed"></iframe>
          <h1>Closer look at Norway</h1>
             <i><font color="grey">Secret recipe to EV fertility</font></i>
-            <p>Such a feet in respect of global performance raises questions on how it can be achieved. First and foremost, lets look at the top EV models sold in Norway.</p>
+            <p>Such a feet in respect of global performance raises questions on how it can be achieved. First and foremost, lets look at the <a href="https://dinside.dagbladet.no/motor/de-storste-elbil-suksessene/72813478">top EV models</a> sold in Norway from their respective releases until mid-2020.</p>
             <iframe width="1100" height="600" frameborder="0" scrolling="no" src="//plotly.com/~shasha.jiang/15.embed"></iframe>
             <P>Nissan Leaf started 10 years ago so it benefits from the top spot compared to the notorious Tesla model 3 which made its debuts a year ago (only!).
                It is obvious that there must be a reason behind these numbers.
                Are Norwegians extremely concerned about the environment?
                Well not more than their neighbour countries (Greta is not Norwegian).
-               Additionally, Norway is the EU member which produces the most petrol in Europe! So what is the secret? Well ... </P>
+               Additionally, Norway is the country which produces the <a href="https://www.worldatlas.com/articles/the-top-oil-producing-nations-in-europe.html">most petrol in Europe</a> (after Russia)! So what is the secret? Well ... </P>
             <i><center>Pricetag!</center></i>
             <p>When it comes down to choosing a new car, EVs are still significantly more expensive with respect their fossil fuel counterparts.
                But thanks to government policies this does not have to be the case everywhere.
@@ -86,16 +86,17 @@ share-img: /assets/img/car.jpg
                The idea here is to see how each event affect the offset and slope of the EV sales across time.
                As dates are not always exact and a time to action should be considered between the event and actual EV purchase, a grace period of 1 month was added.
                This means that 1 month of datapoints after the event is not accounted for in the regression.
-               Additionally, as seen in the very first plot of the datastory, the market share evolution of EVs is quadratic.
+               Furthermore, as seen in the plot EV fleet share in %, the market share evolution of EVs is quadratic.
                In that sense the slope will only increase with time.
                To remove this effect and have a more interpretable slope change before and after the event, we linearised the EV share by taking its logarithm.
                The results for our four dates are the following:
                <iframe width="1200" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shasha.jiang/29.embed"></iframe>
             </p>
             <p>For these results it seems like the Nissan leaf and the Tesla superchargers had the most impact on EV sales.
-               Although less mediatised than Tesla, Nissan leaf was really <b>the</b> car which made EV accessible for the mass market.
+               Although less mediatised than Tesla, Nissan leaf was really <u>the car</u> which made EV accessible for the mass market.
                The Tesla model 3 shows a big growth right after release but this growth doesn’t show itself to be steady in time. It even seems like the trend is dropping for the remaining points after the release!
-               Additionally, it doesn’t seem like the growth of environmental concerns brought by the Paris climate agreement made a paradigm change in EV purchases.
+               This is also most probably due to the fact that by centering the data, we do not have sufficient datapoints to draw any strong conclusion for this event.
+               On another hand, it doesn’t seem like the growth of environmental concerns brought by the Paris climate agreement made a paradigm change in EV purchases.
                This method yields interesting results but has two key drawbacks. </p>
                <ol>
                   <li>We cannot assess the impact of economical factors on the consumer behaviour as we do not have any major events within this 10-year window. </li>
@@ -136,11 +137,13 @@ share-img: /assets/img/car.jpg
 
                <iframe width="1200" height="800" frameborder="0" scrolling="no" src="//plotly.com/~shasha.jiang/31.embed"></iframe>
 
-               <p>In the above plot you see the performance metrics of 20 AR-models, each fitted with the Google Trends data signified by the
-                  keywords on the y-axis. On the left Akaike's Informatino Criterion (AIC) is displayed, which is a common metric to use in order
-                  to evaluate the in-sample performance of a model. A lower value of AIC signifies a better in-sample fit. However, in-sample fit
-                  does not neccesarily lead to prediction efficacy on yet-unseen data. Displayed on the right is the percentage improvement for Mean
-                  Absolute Error (MAE) from the baseline model to the AR model with keywords.</p>
+               <p>In the above plot you see the performance metrics of 20 AR-models, each fitted with the Google Trends data signified by the keywords on the y-axis.
+                 On the left Akaike's Informatino Criterion (AIC) is displayed, which is a common metric to use in order to evaluate how well a model fits the data it is trained on.
+                 A lower value of AIC signifies a better fit. However, A better fit does not necessarily lead to prediction efficacy on data the model has not seen before. </p>
+
+                <p> An intuitive way to compare model performance is to sum up the absolute value of all the errors made by the model, and finally dividing by the mean.
+                  This is called Mean Absolute Error, which is displayed on the right.
+                  In this plot, the MAE of the model with a keyword is displayed as a percentage improvement from the model without a keyword.</p>
 
                <p>However, individual performance does not neatly lead to combined performance. When using several keywords in the same model,
                   some keywords that had good individual performance does not lead to an overall improvement, while some keywords with a lesser
